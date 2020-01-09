@@ -16,13 +16,40 @@ LSTM compensates for the long term memory our problem, as stock predictions requ
 </p>
 The model consists of two LSTM layers each with 40 memory blocks and a single neuron dense layer before the output to make a single prediction on a stock closing price. We input the data points in a mini batch of 32 each epoch. At the first LSTM layer, we apply regular and recurrent dropout regularization at a rate 0.2 to reduce overfitting. Here, recurrent dropout refers to dropping connections between recurrent memory blocks. A second LSTM layer was used to make the network deeper in hopes of learning more complex features in the dataset. The final dense layer uses linear activation, because for a regression problem like time series prediction, predictions values can be unbounded rather than a specific class label.
 
-##Performance Metric and Loss
+## Performance Metric and Loss
 The loss function chosen for evaluating training performance is mean squared error. The optimizer chosen is Adam, which stands for adaptive motion estimation. It performs using the advantages of adaptive gradient algorithm (AdaGrad) and root mean square propagation (RMSProp). Adam computes the exponential moving average based on the average in first moment and controls the decay rates of the average with decay rates beta1 and beta2 [3]. 
 
 ## Results
+### Google Stocks
+<p float="left">
+  <img src="image/google_loss_b32.png" />
+  <img src="image/google_predict_b32.png" />   
+</p>
 
+### Amazon Stocks
+<p float="left">
+  <img src="image/amazon_loss.png" />
+  <img src="image/amazon_predict.png" />   
+</p>
 
-<p>
-    <img src="image/google_loss_b32.png" alt> 
-    <em>**image_caption**</em>
-</p> ![google_predict](image/google_predict_b32.png)
+### Tesla Stocks
+<p float="left">
+  <img src="image/tesla_loss_b32.png" />
+  <img src="image/tesla_predict.png" />   
+</p>
+
+### Nvidia Stocks
+<p float="left">
+  <img src="image/nvidia_loss.png" />
+  <img src="image/nvidia_predict.png" />   
+</p>
+
+## Reference 
+Reference
+[1] A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction. Qin, Y., Song, D., Cheng, H., Cheng, W., Jiang, G., Cottrell, G.
+International Joint Conference on Artificial Intelligence (IJCAI ) , 2017. 
+
+[2] Time Series Prediction with LSTM Recurrent Neural Networks in Python with Keras. Machine Learning Mastery. August 30, 2018. https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/. Accessed 9 December, 2018
+
+[3] Gentle Introduction to the Adam Optimization Algorithm for Deep Learning. Machine Learning Mastery. November 25, 2018. https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/. Accessed 9 December, 2018
+
