@@ -1,4 +1,4 @@
-# ECE629-Neural-Networks
+# Stock-Price-Predictor
 ## Overview
 The goal of this project is to perform time series prediction on financial data using machine learning. The dataset used are based on NASDAQ stock closing prices. Using LSTM architecture, a neural network is trained on the dataset to predict stock prices.
 ## Data Description
